@@ -1,12 +1,9 @@
-use_default_settings: false
-
+use_default_settings: true
 server:
-  secret_key: "CAMBIA_QUESTA_CHIAVE_LUNGA_RANDOM"
-  limiter: true
-  public_instance: false
-
-valkey:
-  url: "valkey://valkey:6379/0"
+  # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
+  secret_key: "thisisakey"  # change this!
+  limiter: false  # enable this when running the instance for a public usage on the internet
+  image_proxy: true
 
 search:
   formats:
@@ -16,12 +13,29 @@ search:
 engines:
   - name: bing news
     engine: bing_news
-    shortcut: bin
-    categories: [news]
     disabled: false
-
   - name: brave.news
     engine: brave
-    shortcut: brnews
-    categories: [news]
+    categories: news
     disabled: false
+  - name: qwant news
+    disabled: true
+  - name: startpage news
+    disabled: true
+  - name: yahoo news
+    disabled: true
+  - name: duckduckgo news
+    disabled: true
+  - name: chinaso news
+    disabled: true
+  - name: naver news
+    disabled: true
+  - name: seekr news
+    disabled: true
+  - name: wikinews
+    disabled: true
+  - name: reuters
+    disabled: true
+  - name: ansa
+    disabled: true
+
