@@ -26,7 +26,7 @@ services:
       - ./searxng:/etc/searxng:rw
       - searxng-data:/var/cache/searxng:rw
     environment:
-      - SEARXNG_BASE_URL=http//192.168.66.26:8055/
+      - SEARXNG_BASE_URL=http://192.168.66.26:8055/
     logging:
       driver: "json-file"
       options:
